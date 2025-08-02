@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Social Stream Ninja Custom</title>
+<script src="https://socialstream.ninja/socialstream.js"></script>
+<script>
+    // Ambil parameter CSS dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const cssUrl = urlParams.get('css');
+    if (cssUrl) {
+        const link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = cssUrl;
+        document.head.appendChild(link);
+    }
+</script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
