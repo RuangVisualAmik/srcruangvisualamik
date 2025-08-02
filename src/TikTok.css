@@ -1,0 +1,253 @@
+.output {
+    width: 600px !important;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 0.5rem;
+}
+
+.highlight-chat {
+    background: #e0e0e0 !important;
+    border-radius: 1.5rem 1.5rem 1.5rem 0.6rem !important;
+    padding: 1rem 1.3rem !important;
+    width: 350px !important; 
+    max-width: 100% !important;
+    color: #000 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    position: relative;
+    box-shadow: none !important;
+    user-select: text;
+}
+
+.highlight-chat::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-width: 25px 20px 0 0;
+  border-style: solid;
+  border-color: #e0e0e0 transparent transparent transparent;
+  transform: rotate(-45deg);
+  z-index: 1;
+	border-radius: 5px;
+}
+
+.highlight-chat.dono {
+  background: linear-gradient(135deg, #00c6ff, #00c6ff) !important;
+  color: #000 !important;
+}
+
+.highlight-chat.dono::after {
+  border-color: #00c6ff transparent transparent transparent; 
+}
+
+		.icon.sourcetype {
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			width: 20px;
+			height: 20px;
+			opacity: 0.7;
+			transition: opacity var(--animation-timing);
+		}
+
+.hl-title {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.5rem;
+	font-family: 'Poppins', sans-serif;
+}
+
+.hl-name {
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    color: #000 !important;
+    line-height: 1.2 !important;
+    margin-left: 0 !important;
+    background: none !important;
+}
+
+.hl-img {
+    position: absolute !important;
+    width: 44px !important;
+    height: 44px !important;
+    bottom: -5px !important;
+    left: -70px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 4px solid #e0e0e0 !important;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.hl-profile-pic {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+.hl-message {
+    margin-left: 0 !important;
+    white-space: normal !important;
+    margin-bottom: 0 !important;
+    word-wrap: break-word;
+    color: #000 !important;
+}
+
+	.hl-imgContent {
+		margin-top: 1rem;
+		border-radius: 8px;
+		overflow: hidden;
+		max-width: 100%;
+}
+
+	.hl-donation {
+		margin-left: 10px;
+		font-weight: 700;
+		color: #FFD700;
+		padding: 0.05rem 0.75rem;
+		background: linear-gradient(135deg, #00c6ff, #0072ff);
+		border-radius: 1rem;
+}
+
+.highlight-chat.dono {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.highlight-chat + .highlight-chat {
+    margin-top: 0.3rem !important;
+}
+
+@keyframes chatSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.highlight-chat {
+  animation: chatSlideIn 0.5s ease-out forwards;
+}
+
+@keyframes avatarPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hl-img {
+  animation: avatarPop 0.4s ease-out 0.2s forwards;
+}
+
+.highlight-chat::after {
+  animation: fadeInTail 0.3s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInTail {
+  to {
+    opacity: 1;
+  }
+}
+
+.highlight-chat:has(.hl-donation) {
+  position: relative;
+  overflow: hidden;
+  animation: donoGlow 2s ease-in-out infinite;
+}
+
+
+.highlight-chat:has(.hl-donation)::before {
+  content: '';
+  position: absolute;
+  inset: 0; 
+  border-radius: inherit; 
+  background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%);
+  animation: sparkMoveInside 2.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0; /* efek glow di bawah teks & avatar */
+	
+}
+
+.highlight-chat.dono .hl-img {
+  position: absolute !important;
+  bottom: -5px !important;
+  left: -70px !important;
+  z-index: 2 !important; 
+}
+
+
+.highlight-chat.dono .hl-img {
+  position: absolute !important;
+  bottom: -5px !important;
+  left: -70px !important;
+  z-index: 2 !important;
+}
+
+@keyframes sparkMoveInside {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.highlight-chat.dono .hl-img {
+  display: block !important;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  animation: avatarPop 0.4s ease-out 0.2s forwards, avatarGlow 2s ease-in-out infinite;
+  border: 4px solid #ffd700 !important;
+}
+
+@keyframes avatarGlow {
+  0% {
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.3), 0 0 12px rgba(255, 215, 0, 0.4);
+    border-color: #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 215, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.8);
+    border-color: #ffdf00;
+  }
+  100% {
+    box-shadow: 0 0 6px rgba(255, 215, 0, 0.3), 0 0 12px rgba(255, 215, 0, 0.4);
+    border-color: #ffd700;
+  }
+}
+
+
+/* CSS BY RUANG VISUAL AMIK */
+/* CSS INI TIDAK UNTUK DI SEBARKAN TANPA IZIN! */
+/* JULI 2025 */

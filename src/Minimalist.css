@@ -1,0 +1,50 @@
+
+.output {
+    width: 600px !important;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 0.5rem;
+}
+
+.highlight-chat {
+	background: linear-gradient(145deg, #ffffff, #f1f1f1);
+	color: #ffffff;
+	border-radius: 20px;
+	padding: 1rem 1.25rem;
+	position: relative;
+	border: none;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+	animation: slideUp var(--animation-timing);
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+}
+
+.highlight-chat.dono {
+	background: linear-gradient(145deg, #ffffff, #eaeaea);
+}
+
+.hl-name {
+	background: none !important;
+	color: #0000000 !important;
+	padding: 0 !important;
+	margin-left: 12px;
+}
+
+.hl-message {
+	color: #000000 !important;
+	background: rgba(255, 255, 255, 0.15);
+	padding: 0.75rem 1rem;
+	border-radius: 16px;
+	margin-left: 0;
+	margin-top: 0.5rem;
+}
+
+/* CSS BY RUANG VISUAL AMIK */
+/* CSS INI TIDAK UNTUK DI SEBARKAN TANPA IZIN! */
+/* JULI 2025 */
